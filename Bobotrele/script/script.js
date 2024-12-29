@@ -34,3 +34,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // Domyślnie pokaż sekcję 'home' przy załadowaniu
   navigateTo("oferta");
 });
+
+// Funkcja odpowiedzialna za pop-out
+function showModal(modalId) {
+  const modal = document.getElementById("modal");
+  const message = {
+    modal1: "Opis oferty 1.",
+    modal2:
+      "Muzykoterapia to zajęcia muzyczne, których celem jest regulacja emocji uczestników. Na zajęciach celem nie jest nauczenie się konkretnych piosenek czy umiejętności gry na instrumencie, ale poznanie własnych emocji, wzrost świadomości ciała oraz zbudowanie wiary w swoje umiejętności. To wszystko w formie zabaw muzycznych.",
+    modal3: "Opis oferty 3.",
+    modal4: "Opis oferty 4.",
+    modal5: "Opis oferty 5.",
+    modal6: "Opis oferty 6.",
+  };
+  document.getElementById("modal-message").innerText = message[modalId];
+  modal.classList.remove("hidden");
+}
+
+function closeModal() {
+  const modal = document.getElementById("modal");
+  modal.classList.add("hidden");
+}
