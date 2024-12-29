@@ -24,6 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Dodaj nasłuchiwacz do linku z obrazkiem
+  const logoLink = document.querySelector("header a[href='#home']");
+  logoLink.addEventListener("click", (event) => {
+    event.preventDefault(); // Zablokuj domyślne działanie linku
+    navigateTo("home"); // Przejdź do sekcji 'home'
+  });
+
   // Domyślnie pokaż sekcję 'home' przy załadowaniu
-  navigateTo("home");
+  navigateTo("oferta");
 });
