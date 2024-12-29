@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Domyślnie pokaż sekcję 'home' przy załadowaniu
-  navigateTo("oferta");
+  navigateTo("home");
 });
 
 // Funkcja odpowiedzialna za pop-out
