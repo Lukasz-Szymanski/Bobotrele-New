@@ -18,8 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("nav a");
   links.forEach((link) => {
     link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+      if (href.endsWith(".pdf")) {
+        // Jeśli link prowadzi do pliku PDF, otwórz go w nowej karcie
+        window.open(href, "_blank");
+        return; // Zakończ dalsze przetwarzanie
+      }
       event.preventDefault(); // Zablokuj domyślne działanie linku
-      const sectionId = link.getAttribute("href").substring(1); // Pobierz id sekcji
+      const sectionId = href.substring(1); // Pobierz id sekcji
       navigateTo(sectionId); // Przejdź do sekcji
     });
   });
